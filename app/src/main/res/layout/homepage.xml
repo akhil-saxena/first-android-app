@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:id="@+id/search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Shopping Welcome Banner -->
+        <ImageView
+            android:id="@+id/banner_carousel"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/img"/>
+
+        <!-- Top Search Bar -->
+        <EditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/banner_carousel"
+            android:layout_toLeftOf="@+id/go_button"
+            android:hint="Search"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:maxLines="1"
+            android:padding="8dp" />
+
+        <Button
+            android:id="@+id/go_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/banner_carousel"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Go" />
+    </RelativeLayout>
+
+    <!-- Our Ad Image -->
+    <ImageView
+        android:id="@+id/adImage"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_below="@id/search_bar"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:padding="5dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/product1"
+        tools:src="@drawable/ic_launcher_background" />
+
+    <!-- Banner Carousel -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/adImage"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp"
+        tools:listitem= "@layout/item_product"
+        android:padding="19dp"/>
+
+    <!-- Bottom Static Menu -->
+    <LinearLayout
+        android:id="@+id/bottom_menu"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@id/recyclerView"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/white"
+        android:elevation="8dp"
+        android:orientation="horizontal"
+        android:padding="2dp">
+
+        <ImageView
+            android:id="@+id/cart_icon"
+            android:layout_width="100dp"
+            android:layout_height="80dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="2dp"
+            android:src="@drawable/cart" />
+
+        <ImageView
+            android:id="@+id/wishlist_icon"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="7dp"
+            android:src="@drawable/wishlist" />
+
+        <ImageView
+            android:id="@+id/profile_icon"
+            android:layout_width="100dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:padding="6dp"
+            android:src="@drawable/user" />
+    </LinearLayout>
+
+</RelativeLayout>
