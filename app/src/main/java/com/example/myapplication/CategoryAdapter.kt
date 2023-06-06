@@ -23,15 +23,6 @@ class CategoryAdapter(private val categories: List<Category>) :
     override fun onBindViewHolder(holder: CategoriesViewHolder, position: Int) {
         val category = categories[position]
         holder.button.text = category.categoryName
-        holder.button.setOnClickListener {
-            // Handle item click event
-            Toast.makeText(
-                holder.itemView.context,
-                "Clicked on ${category.categoryName}",
-                Toast.LENGTH_SHORT
-            ).show()
-
-        }
     }
 
     override fun getItemCount(): Int {
