@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -15,6 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#78b9e7"
+            app:title="@string/app_name"
+            android:gravity="center_horizontal"
+            android:textAlignment="center"
             android:titleTextColor="@color/black" />
 
         <LinearLayout
@@ -31,7 +35,7 @@
             android:id="@+id/search_edit_text"
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_below="@id/banner_carousel"
             android:layout_toLeftOf="@+id/go_button"
             android:hint="Search"
@@ -49,7 +53,7 @@
         <Button
             android:id="@+id/go_button"
             android:layout_width="wrap_content"
-            android:layout_height="40dp"
+            android:layout_height="48dp"
             android:layout_gravity="center_vertical"
             android:layout_below="@id/banner_carousel"
             android:layout_alignParentRight="true"
@@ -69,28 +73,38 @@
         android:layout_below="@id/search_bar"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:padding="5dp"
         android:layout_marginTop="10dp"
         android:scaleType="fitXY"
         android:src="@drawable/product1"
         tools:src="@drawable/ic_launcher_background" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/categoryRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:paddingStart="5dp"
+        android:layout_below="@id/adImage"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        tools:listitem= "@layout/item_category"
+        />
 
     <!-- Banner Carousel -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/adImage"
+        android:layout_below="@id/categoryRecyclerView"
         android:orientation="horizontal"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="10dp"
         tools:listitem= "@layout/item_product"
-        android:padding="19dp"/>
+        android:padding="5dp"/>
 
     <!-- Bottom Static Menu -->
     <LinearLayout
         android:id="@+id/bottom_menu"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
         android:elevation="8dp"

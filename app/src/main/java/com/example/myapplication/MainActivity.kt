@@ -30,13 +30,16 @@ class MainActivity : AppCompatActivity() {
         // Set default latitude and longitude values
         val defaultLatitude = "123.67"
         val defaultLongitude = "167.45"
-        latitudeEditText.setText(defaultLatitude)
-        longitudeEditText.setText(defaultLongitude)
+
 
         submitButton.setOnClickListener {
             val latitude = latitudeEditText.text.toString()
             val longitude = longitudeEditText.text.toString()
+            if(latitude.equals(null) || longitude.equals(null)){
+                latitudeEditText.setText(defaultLatitude)
+                longitudeEditText.setText(defaultLongitude)
 
+            }
             sendRequest(latitude, longitude)
             val intent = Intent(this@MainActivity, HomeActivity::class.java)
             intent.putExtra("latitude", latitude)
@@ -47,7 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendRequest(latitude: String, longitude: String) {
-        val url = "https://akhil.free.beeceptor.com/fetchImage" // Replace with your API endpoint
+        val url = "https://wmhackpocapp.free.beeceptor.com/v1/service/event-ads"
+        // Replace with your API endpoint
+
 
         val requestBody = FormBody.Builder()
             .add("latitude", latitude)
@@ -88,8 +93,10 @@ class MainActivity : AppCompatActivity() {
                     intent.putExtra("imageUrl", imageUrl)
                     startActivity(intent)
                 } else { // Request failed, handle the error
-                    Toast.makeText(this@MainActivity, "API request failed", Toast.LENGTH_SHORT)
-                        .show()
+                    runOnUiThread {
+                        Toast.makeText(this@MainActivity, "API request failed", Toast.LENGTH_SHORT)
+                            .show()
+                    }
                 }
             }
 
