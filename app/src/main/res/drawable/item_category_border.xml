@@ -2,5 +2,5 @@
     <solid android:color="#FFFFFF" /> <!-- Background color of the item -->
     <stroke
         android:width="2dp"
-        android:color="#033500" /> <!-- Border color -->
+        android:color="#033500" />
 </shape>

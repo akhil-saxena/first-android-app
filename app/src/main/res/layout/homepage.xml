@@ -10,36 +10,55 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- Shopping Welcome Banner -->
-        <ImageView
-            android:id="@+id/banner_carousel"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="1dp"
-            android:layout_marginBottom="15dp"
-            android:src="@drawable/img"/>
+            android:layout_height="?attr/actionBarSize"
+            android:background="#78b9e7"
+            android:titleTextColor="@color/black" />
+
+        <LinearLayout
+            android:id="@+id/searchBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/toolbar"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
 
         <!-- Top Search Bar -->
         <EditText
             android:id="@+id/search_edit_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
             android:layout_below="@id/banner_carousel"
             android:layout_toLeftOf="@+id/go_button"
             android:hint="Search"
+            android:background="@drawable/rounded_edit_text"
             android:imeOptions="actionDone"
             android:inputType="text"
             android:maxLines="1"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:layout_centerVertical="true"
+            android:paddingStart="8dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
+            />
 
         <Button
             android:id="@+id/go_button"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
             android:layout_below="@id/banner_carousel"
             android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingBottom="10dp"
+            android:backgroundTint="#007dc6"
             android:text="Go" />
+        </LinearLayout>
     </RelativeLayout>
 
     <!-- Our Ad Image -->
@@ -51,6 +70,7 @@
         android:layout_gravity="center"
         android:layout_weight="1"
         android:padding="5dp"
+        android:layout_marginTop="10dp"
         android:scaleType="fitXY"
         android:src="@drawable/product1"
         tools:src="@drawable/ic_launcher_background" />
@@ -70,8 +90,7 @@
     <LinearLayout
         android:id="@+id/bottom_menu"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/recyclerView"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
         android:elevation="8dp"
@@ -80,30 +99,34 @@
 
         <ImageView
             android:id="@+id/cart_icon"
-            android:layout_width="100dp"
-            android:layout_height="80dp"
-            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="center"
             android:padding="2dp"
-            android:src="@drawable/cart" />
+            android:src="@drawable/home" />
 
         <ImageView
             android:id="@+id/wishlist_icon"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_gravity="center"
             android:layout_weight="1"
             android:padding="7dp"
-            android:src="@drawable/wishlist" />
+            android:src="@drawable/shopping_cart" />
 
         <ImageView
             android:id="@+id/profile_icon"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:layout_gravity="center"
             android:padding="6dp"
-            android:src="@drawable/user" />
+            android:src="@drawable/account_circle" />
     </LinearLayout>
+
 
 </RelativeLayout>

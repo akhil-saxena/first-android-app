@@ -47,7 +47,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun sendRequest(latitude: String, longitude: String) {
-//        val url = "https://example.com/api/image?lat=$latitude&lng=$longitude" // how to insert location data in API
         val url = "https://akhil.free.beeceptor.com/fetchImage" // Replace with your API endpoint
 
         val requestBody = FormBody.Builder()
