@@ -21,11 +21,11 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main)
 
-        val latitudeEditText: EditText = findViewById(R.id.latitudeEditText);
-        val longitudeEditText: EditText = findViewById(R.id.longitudeEditText);
-        val submitButton: Button = findViewById(R.id.submitButton);
+        val latitudeEditText: EditText = findViewById(R.id.latitudeEditText)
+        val longitudeEditText: EditText = findViewById(R.id.longitudeEditText)
+        val submitButton: Button = findViewById(R.id.submitButton)
 
         // Set default latitude and longitude values
         val defaultLatitude = "123.67"
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         submitButton.setOnClickListener {
             val latitude = latitudeEditText.text.toString()
             val longitude = longitudeEditText.text.toString()
-            if(latitude.equals(null) || longitude.equals(null)){
+            if (latitude.equals(null) || longitude.equals(null)) {
                 latitudeEditText.setText(defaultLatitude)
                 longitudeEditText.setText(defaultLongitude)
 

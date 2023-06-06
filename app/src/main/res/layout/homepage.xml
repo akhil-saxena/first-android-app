@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <RelativeLayout
@@ -16,10 +16,10 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="#78b9e7"
-            app:title="@string/app_name"
             android:gravity="center_horizontal"
             android:textAlignment="center"
-            android:titleTextColor="@color/black" />
+            android:titleTextColor="@color/black"
+            app:title="@string/app_name" />
 
         <LinearLayout
             android:id="@+id/searchBarLayout"
@@ -30,38 +30,37 @@
             android:padding="5dp">
 
 
-        <!-- Top Search Bar -->
-        <EditText
-            android:id="@+id/search_edit_text"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="48dp"
-            android:layout_below="@id/banner_carousel"
-            android:layout_toLeftOf="@+id/go_button"
-            android:hint="Search"
-            android:background="@drawable/rounded_edit_text"
-            android:imeOptions="actionDone"
-            android:inputType="text"
-            android:maxLines="1"
-            android:padding="8dp"
-            android:layout_centerVertical="true"
-            android:paddingStart="8dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            />
+            <!-- Top Search Bar -->
+            <EditText
+                android:id="@+id/search_edit_text"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_below="@id/banner_carousel"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@+id/go_button"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_edit_text"
+                android:hint="Search"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:paddingStart="8dp" />
 
-        <Button
-            android:id="@+id/go_button"
-            android:layout_width="wrap_content"
-            android:layout_height="48dp"
-            android:layout_gravity="center_vertical"
-            android:layout_below="@id/banner_carousel"
-            android:layout_alignParentRight="true"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
-            android:paddingBottom="10dp"
-            android:backgroundTint="#007dc6"
-            android:text="Go" />
+            <Button
+                android:id="@+id/go_button"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:layout_below="@id/banner_carousel"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:backgroundTint="#007dc6"
+                android:paddingBottom="10dp"
+                android:text="Go" />
         </LinearLayout>
     </RelativeLayout>
 
@@ -72,8 +71,8 @@
         android:layout_height="200dp"
         android:layout_below="@id/search_bar"
         android:layout_gravity="center"
-        android:layout_weight="1"
         android:layout_marginTop="10dp"
+        android:layout_weight="1"
         android:scaleType="fitXY"
         android:src="@drawable/product1"
         tools:src="@drawable/ic_launcher_background" />
@@ -82,12 +81,11 @@
         android:id="@+id/categoryRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:paddingStart="5dp"
         android:layout_below="@id/adImage"
-        android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        tools:listitem= "@layout/item_category"
-        />
+        android:orientation="horizontal"
+        android:paddingStart="5dp"
+        tools:listitem="@layout/item_category" />
 
     <!-- Banner Carousel -->
     <androidx.recyclerview.widget.RecyclerView
@@ -95,10 +93,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/categoryRecyclerView"
-        android:orientation="horizontal"
         android:layout_marginTop="10dp"
-        tools:listitem= "@layout/item_product"
-        android:padding="5dp"/>
+        android:orientation="horizontal"
+        android:padding="5dp"
+        tools:listitem="@layout/item_product" />
 
     <!-- Bottom Static Menu -->
     <LinearLayout
@@ -115,9 +113,9 @@
             android:id="@+id/cart_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_gravity="center"
             android:padding="2dp"
             android:src="@drawable/home" />
 
@@ -125,9 +123,9 @@
             android:id="@+id/wishlist_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:background="?attr/selectableItemBackgroundBorderless"
             android:layout_gravity="center"
             android:layout_weight="1"
+            android:background="?attr/selectableItemBackgroundBorderless"
             android:padding="7dp"
             android:src="@drawable/shopping_cart" />
 
@@ -135,9 +133,9 @@
             android:id="@+id/profile_icon"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:layout_gravity="center"
             android:padding="6dp"
             android:src="@drawable/account_circle" />
     </LinearLayout>

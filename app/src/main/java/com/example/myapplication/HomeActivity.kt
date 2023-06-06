@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class HomeActivity : AppCompatActivity()  {
+class HomeActivity : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var horizontalRecyclerView: RecyclerView
     private lateinit var productAdapter: ProductAdapter

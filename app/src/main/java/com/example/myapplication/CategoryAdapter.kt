@@ -15,7 +15,8 @@ class CategoryAdapter(private val categories: List<Category>) :
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriesViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
+        val itemView =
+            LayoutInflater.from(parent.context).inflate(R.layout.item_category, parent, false)
         return CategoriesViewHolder(itemView)
     }
 
@@ -24,7 +25,11 @@ class CategoryAdapter(private val categories: List<Category>) :
         holder.button.text = category.categoryName
         holder.button.setOnClickListener {
             // Handle item click event
-            Toast.makeText(holder.itemView.context, "Clicked on ${category.categoryName}", Toast.LENGTH_SHORT).show()
+            Toast.makeText(
+                holder.itemView.context,
+                "Clicked on ${category.categoryName}",
+                Toast.LENGTH_SHORT
+            ).show()
 
         }
     }
