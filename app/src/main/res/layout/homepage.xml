@@ -17,7 +17,6 @@
             android:layout_height="?attr/actionBarSize"
             android:background="#78b9e7"
             android:gravity="center_horizontal"
-            android:textAlignment="center"
             android:titleTextColor="@color/black"
             app:title="@string/app_name" />
 
@@ -102,7 +101,7 @@
     <LinearLayout
         android:id="@+id/bottom_menu"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:background="@android:color/white"
         android:elevation="8dp"

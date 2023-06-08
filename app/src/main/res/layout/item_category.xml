@@ -12,6 +12,10 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_button_border"
         android:padding="16dp"
-        android:textColor="@android:color/black"
+        android:textColor="@android:color/white"
+        android:outlineAmbientShadowColor="#ffc220"
+        android:drawableTint="#007dc6"
+        android:foregroundTint="#007dc6"
+        android:shadowColor="#ffc220"
         tools:text="Electronics" />
 </LinearLayout>

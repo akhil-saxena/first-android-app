@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun sendRequest(latitude: String, longitude: String) {
         val url = "https://wmhackpocapp.free.beeceptor.com/v1/service/event-ads"
+        //val url = "https://mocki.io/v1/87d432c7-26e0-4245-99a2-7e8db6234672"
         // Replace with your API endpoint
 
 
@@ -64,7 +65,7 @@ class MainActivity : AppCompatActivity() {
             .post(requestBody)
             .build()
 
-        Log.d("API request", requestBody.toString())
+        Log.d("API request", request.toString())
         val client = OkHttpClient()
 
         client.newCall(request).enqueue(object : Callback {

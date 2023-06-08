@@ -1,8 +1,11 @@
 package com.example.myapplication
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,6 +23,12 @@ class HomeActivity : AppCompatActivity() {
         setContentView(R.layout.homepage)
 
         imageView = findViewById(R.id.adImage)
+        imageView.setOnClickListener {
+            // Handle the click event here
+            // Example: show a toast message
+            openWebsite("https://www.walmart.com")
+            Toast.makeText(this@HomeActivity, "Image clicked", Toast.LENGTH_SHORT).show()
+        }
         horizontalRecyclerView = findViewById(R.id.recyclerView)
         categoryRecyclerView = findViewById(R.id.categoryRecyclerView)
 
@@ -84,5 +93,10 @@ class HomeActivity : AppCompatActivity() {
         categoryRecyclerView.adapter = categoryAdapter
 
 
+    }
+    private fun openWebsite(url: String) {
+        val intent = Intent(Intent.ACTION_VIEW)
+        intent.data = Uri.parse(url)
+        startActivity(intent)
     }
 }
